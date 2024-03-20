@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8"/>
+   <style>
+   
+   </style>
+   <title>Cleveland Codes</title>
+   <pre>
+   <script>
+      "use strict";
+	  // decalre and initialize variables
+	  var fibNum;        // how many numbers we want in sequence
+	  var fibArray = []; // array to hold sequence
+	  fibArray[0] = 0;
+	  fibArray[1] = 1;
+	  
+	  fibNum = prompt("How many numbers in the sequence?");
+	  fibNum = parseInt(fibNum);
+	  // check that fibNum >= 3
+	  if(fibNum>=3){
+      // use a for loop to write the values into the array
+	  for (var i = 2; i<fibNum; i++){
+        fibArray[i]=(fibArray[i-1]+fibArray[i-2]);
+      }
+
+      document.write("<br>Fibonacci Sequence: ")
+	  // use a for loop to read from the array and write to screen
+	  for (var i=0; i<fibArray.length; i++){
+      document.write(fibArray[i]+",")
+     }
+	  // calculate golden ratio
+	  //  last number / 2nd last number
+	 var ratio = fibArray[fibNum-1] / fibArray[fibNum-2];
+	
+	  // write out the ratio
+     document.write("<br><br>Golden ratio: "+ratio);
+   }
+   </script>
+   </pre>
+</head>
+<body>
+   <h2>Lab 2 - Fibonacci Sequence</h2>
+
+</body>
+
+</html>
