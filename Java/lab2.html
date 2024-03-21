@@ -18,7 +18,7 @@
 	  fibNum = prompt("How many numbers in the sequence?");
 	  fibNum = parseInt(fibNum);
 	  // check that fibNum >= 3
-	  if(fibNum>=3){
+	  if(fibNum<3){
       // use a for loop to write the values into the array
 	  for (var i = 2; i<fibNum; i++){
         fibArray[i]=(fibArray[i-1]+fibArray[i-2]);
