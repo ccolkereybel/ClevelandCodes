@@ -4,20 +4,32 @@
 	<script>
 		"use strict";
 		function calcFactorial(num) {
-            // calculate and return factorial of num
-		}
+            // calculate and return factorial of num 
+
+            var factorial = 1;
+
+            for (var i=num; i>0; i--){
+                factorial = factorial * i;
+                
+            }
+            return factorial;
+            }
+            
+
 		function calculate() {
 		    // get myNum entered ny the user
-		    myNum = 
-			
-		    // square it
-		    mySquare = 
+		    var myNum = document.getElementById("myNum").value;
+			myNum = parseInt(myNum);
+		    
+            // square it
+		    var mySquare = myNum*myNum;
 			
 		    // call your function to calculate factorial
 		    var myFactorial = calcFactorial(myNum);
 		   
 		    // display the square and factorial in the input fields
-
+            document.getElementById("mySquare").value = mySquare;
+            document.getElementById("myFactorial").value = myFactorial;
 		}
 		
         window.onload = function() {
