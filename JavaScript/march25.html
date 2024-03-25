@@ -8,6 +8,11 @@
     <script>
         "use strict"
 
+    function mStatusChange(){
+        var mstatus = document.getElementById("mstatus").value;
+        document.getElementById("area2").innerHTML = mstatus; //dont need to refresh page
+    }
+
     function update(){
 
         var months = ["Jan", "Feb", "Mar", "Apr"];
@@ -82,7 +87,11 @@
 
     <span id="area1"> </span><br><br>
     <span id="area2"> </span><br><br>
-
+    <select id ="mstatus" onchange="mStatusChange()">
+        <option value=""></option>
+        <option value="M">Married</option>
+        <option value="S">Single</option>
+    </select>
     <button type="button" id="btn">SUBMIT</button>
 
 </body>
