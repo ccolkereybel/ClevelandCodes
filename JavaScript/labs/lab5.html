@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <style>
+        body{
+            text-align: center;
+            padding-left: auto;
+            padding-right: auto;
+            padding-top: 20%;
+        }
+
+        #area1{
+            font-size: 5em;
+        }
+
+    </style>
+    <script>
+        "use strict"
+        var tenths = 0;
+        var seconds = 0;
+        var minutes = 0;
+        var timer;
+        var running = false; 
+    
+    function twoDigits(num){    
+    if(num<10){
+        return "0" + num;
+    } else {
+        return num;
+    }
+}
+
+    function update(){
+        tenths++;
+    
+        if(tenths==10){
+            seconds ++;
+            tenths = 0;
+        }
+
+        if(seconds==60){
+            minutes ++;
+            seconds = 0;
+        }
+
+        document.getElementById("area1").innerHTML = twoDigits(minutes) + ":" + twoDigits(seconds) + ":" + tenths;
+    }
+
+    function start(){
+        if(!running){
+        timer = setInterval(update, 100); 
+        running = true;  
+        }
+    } 
+
+    function stop (){
+        clearInterval(timer);
+        running = false;
+    }
+
+    function reset(){
+        if(!running){
+        tenths = 0;
+        seconds = 0;
+        minutes = 0;
+        document.getElementById("area1").innerHTML = twoDigits(minutes) + ":" + twoDigits(seconds) + ":" + tenths;
+        }    
+    }
+
+    function lap (){
+        document.getElementById("area2").innerHTML = twoDigits(minutes) + ":" + twoDigits(seconds) + ":" + tenths;
+    }
+
+	
+    window.onload = function(){
+        document.getElementById("btn1").onclick = start;
+        document.getElementById("btn2").onclick = stop;
+        document.getElementById("btn3").onclick = reset;
+        document.getElementById("btn4").onclick = lap;
+    }
+    
+    </script>
+    <title>Lab 5</title>
+
+</head>
+    <body>
+    <span id="area1">00:00:0</span><br><br>
+    Lap: <span id="area2"></span><br><br>
+    <button type="button" id="btn1">Start</button>
+    <button type="button" id="btn2">Stop</button>
+    <button type="button" id="btn3">Reset</button>
+    <button type="button" id="btn4">Lap</button>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <style>
+   
+    </style>
+    <script>
+        "use strict"
+        var x = 0;
+        var timer;
+
+        timer = setInterval(update, 2000)
+
+    function update(){
+        document.getElementById("area2").innerHTML = x
+        x++;
+    }
+
+    function stop (){
+        clearInterval(timer);
+    }
+
+	
+    window.onload = function(){
+        document.getElementById("btn").onclick = stop;
+    }
+    
+       
+    </script>
+    <title>March 26</title>
+
+</head>
+    <body>
+        <h2>Timers</h2>
+    <span id="area2"> </span><br><br>
+    <button type="button" id="btn">Stop</button>
+
+</body>
+</html>
