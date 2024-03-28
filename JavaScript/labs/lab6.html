@@ -151,14 +151,7 @@
             document.getElementById("phoneLabel").className = "blacktext";
         }
 
-        if(password == ""){
-            document.getElementById("passwordLabel").className = "redtext";
-            formGood = false;
-        } else {
-            document.getElementById("passwordLabel").className = "blacktext";
-        }
-
-        if(password2 == "" || password != password2 ){
+        if((password == "" || password2 == "") || (password != password2) ){
             document.getElementById("passwordLabel").className = "redtext";
             document.getElementById("password2Label").className = "redtext";
             formGood = false;
@@ -186,10 +179,31 @@
             }
         }
 
+        function resetBlack() {
+        var fname = document.getElementById("fnameLabel").className = "blacktext";
+        var lname = document.getElementById("lnameLabel").className = "blacktext";
+        var address1 = document.getElementById("address1Label").className = "blacktext";
+        var address2 = document.getElementById("address2Label").className = "blacktext";
+        var city = document.getElementById("cityLabel").className = "blacktext";
+        var state = document.getElementById("stateLabel").className = "blacktext";
+        var zipcode = document.getElementById("zipcodeLabel").className = "blacktext";
+        var gender = document.getElementById("genderLabel").className = "blacktext";
+        var dob = document.getElementById("dobLabel").className = "blacktext";
+        var mstatus = document.getElementById("mstatusLabel").className = "blacktext";
+        var sname = document.getElementById("snameLabel").className = "blacktext";
+        var email = document.getElementById("emailLabel").className = "blacktext";
+        var phone = document.getElementById("phoneLabel").className = "blacktext";
+        var password = document.getElementById("passwordLabel").className = "blacktext";
+        var password2 = document.getElementById("password2Label").className = "blacktext";
+        var errMsg = document.getElementById("errMsg").innerHTML = "All fields are required"
+        errMsg = document.getElementById("errMsg").className = "blacktext"
+         }
+
     window.onload = function() {
         document.getElementById("goBtn").onclick = processForm;
         document.getElementById("mstatus").onchange = mstatusChange;
         document.getElementById("fname").focus();
+        document.getElementById("reset").onclick = resetBlack;
     }
    </script>
    <title>Form Validation Lab</title>
@@ -322,7 +336,7 @@
          </tr>
 
          <tr>
-            <td colspan="2"><input type="reset"></td>
+            <td colspan="2"><input id="reset" type="reset"></td>
             <td colspan="2"><button id="goBtn" type="button"> SUBMIT </button></td> 
          </tr>
    </table>
