@@ -20,5 +20,6 @@
 
 SELECT invoice_number, invoice_date
 FROM invoices
-WHERE invoice_date >= "2014-04-01" and invoice_date <= "2014-04-30"
+WHERE MONTH (invoice_date) = 4 and YEAR(invoice_date) = 2014
+-- WHERE invoice_date >= "2014-04-01" and invoice_date <= "2014-04-30"
 ORDER BY invoice_date  
