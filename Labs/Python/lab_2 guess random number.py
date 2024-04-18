@@ -1,7 +1,7 @@
 import random 
 rnum = random.randrange(1,100)
 counter = 0
-print(rnum)
+#print(rnum)
 
 while True:
     userInput = input("Guess a whole number between 1 and 100")
