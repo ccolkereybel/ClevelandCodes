@@ -11,40 +11,40 @@ def moveto(x,y):
 
 class myTurtle(Turtle):
 
-class Circle:
-    def __init__(self, radius, color, filled):
-        self.radius = radius
-        self.color = color
-        self.filled = filled
-    def __str__(self):
-        if self.filled:
-            return f"A {self.color} circle with a radius {self.radius} filled."
-        else:
-            return f"A {self.color} circle with a radius {self.radius} not filled."
-    def draw(self):
-        t.color(self.color)
-        if self.filled:
-            t.fillcolor(self.color)
-            t.begin_fill()
-        t.circle(self.radius)
-        if self.filled:
-            t.end_fill()
+    class Circle:
+        def __init__(self, radius, color, filled):
+            self.radius = radius
+            self.color = color
+            self.filled = filled
+        def __str__(self):
+            if self.filled:
+                return f"A {self.color} circle with a radius {self.radius} filled."
+            else:
+                return f"A {self.color} circle with a radius {self.radius} not filled."
+        def draw(self):
+            t.color(self.color)
+            if self.filled:
+                t.fillcolor(self.color)
+                t.begin_fill()
+            t.circle(self.radius)
+            if self.filled:
+                t.end_fill()
 
-class Polygon:
-    def __init__(self, numsides, sidelength, color, filled):
-        self.numsides = numsides
-        self.sidelength = sidelength
-        self.color = color
-        self.filled = filled
-    def __str__(self):
-        if self.filled:
-            return f"A {self.color} {self.numsides} sided polygon filled"
-        else:
-            return f"A {self.color} {self.numsides} sided polygon not filled"
-    def draw(self):
-        t.color(self.color)
-        if self.filled:
-            t.fillcolor(self.color)
+    class Polygon:
+        def __init__(self, numsides, sidelength, color, filled):
+            self.numsides = numsides
+            self.sidelength = sidelength
+            self.color = color
+            self.filled = filled
+        def __str__(self):
+            if self.filled:
+                return f"A {self.color} {self.numsides} sided polygon filled"
+            else:
+                return f"A {self.color} {self.numsides} sided polygon not filled"
+        def draw(self):
+            t.color(self.color)
+            if self.filled:
+                t.fillcolor(self.color)
             t.begin_fill()
         angle = 360/self.numsides
         for i in range(self.numsides):
