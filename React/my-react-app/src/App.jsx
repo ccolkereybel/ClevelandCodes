@@ -1,9 +1,13 @@
-import UserGreeting from "./UserGreeting.jsx";
+
+
+import MyComponent from "./MyComponent.jsx";
 
 function App() {
+
+
   return (
     <>
-      <UserGreeting isLoggedIn={true} />
+  <MyComponent />
     </>
   );
 }
