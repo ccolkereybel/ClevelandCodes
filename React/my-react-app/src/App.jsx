@@ -1,13 +1,13 @@
 
 
-import MyComponent from "./MyComponent.jsx";
+import List from "./List.jsx";
 
 function App() {
 
 
   return (
     <>
-  <MyComponent />
+  <List />
     </>
   );
 }
