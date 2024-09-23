@@ -1,15 +1,11 @@
-import Counter from "./Counter";
-import MyComponent from "./MyComponent";
-
+import ToDo from "./ToDo.jsx"
 
 function App() {
-
-
-  return (
-    <>
-  <MyComponent />
-    </>
+ 
+  
+  return(
+    <ToDo />
   );
 }
 
-export default App;
+export default App
