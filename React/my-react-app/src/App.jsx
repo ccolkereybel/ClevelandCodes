@@ -1,11 +1,8 @@
-import ToDo from "./ToDo.jsx"
+import MyComponent from "./MyComponent.jsx";
+import ToDo from "./ToDo.jsx";
 
 function App() {
- 
-  
-  return(
-    <ToDo />
-  );
+  return <MyComponent />;
 }
 
-export default App
+export default App;
