@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <style>
+   
+    </style>
+    <script>
+        "use strict"
+
+    function update(){
+
+        var months = ["Jan", "Feb", "Mar", "Apr"];
+        var x = document.getElementById("text").value;
+        document.getElementById("subheader").innerHTML = "<h3>" + x + "<h3>";
+        var hdr = document.getElementById("header").innerHTML;
+        document.getElementById("answer").value = hdr;
+
+        var d = new Date();
+        var today = d.getDate(); //25
+        var month = d.getMonth() + 1; //2 (0 base)
+        var year = d.getFullYear(); //2024
+        var hour = d.getHours(); //18
+        var minutes = d.getMinutes(); // ??
+        var seconds = d.getSeconds();
+
+        var datePart = months[month] + " " + today + ", " + year;
+
+        var amPM = "AM";
+        if(hour > 11){
+            amPM = "PM";
+        }
+
+        if(hour == 0){
+            hour = 12;
+        }
+
+        if(hour>12){
+            hour -= 12; // hour = hour - 12
+        }
+
+        var timePart = hour + ":" + minutes + ":" + seconds + " " + amPM;
+        document.getElementById("area1").innerHTML = datePart + " " + timePart + " " + d.toLocaleString();
+
+        var alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var l = alpha.length;
+
+        var outstr = "";
+
+        for (var i=0; i<l; i++){
+            outstr += alpha[i] + "<br>";
+        }
+
+        document.getElementById("area2").innerHTML = outstr;
+    }
+	
+    window.onload = function(){
+        document.getElementById("btn").onclick = update;
+    }
+       
+    </script>
+    <title>March 25</title>
+
+</head>
+<body>
+    <h2 id="header">Strings and Dates</h2>
+    <span id="subheader"> </span><br><br>
+    Text: <input id="text" type="text"><br><br>
+    Answer: <input id="answer" type="text" disabled><br><br>
+
+    <span id="area1"> </span><br><br>
+    <span id="area2"> </span><br><br>
+
+    <button type="button" id="btn">SUBMIT</button>
+
+</body>
+</html>

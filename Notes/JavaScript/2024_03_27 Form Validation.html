@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <style>
+        table{
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table, td, tr {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .redtext{
+            color: red;
+        }
+
+        .blacktext{
+            color: black;
+        }
+
+    </style>
+    <script>
+        "use strict"
+        function processForm (){
+            var formGood = true;
+
+            //get all the entered values;
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var mstatus = document.getElementById("mstatus").value;
+            var sname = document.getElementById("sname").value;
+            var gender;
+
+            /* check if radio button blank
+            if (document.getElementById("female").checked){
+                gender = "Female";
+            }
+            else if (document.getElementById("male").checked){
+                gender = "Male";
+            } else {
+                gender = "";
+            }
+           */
+
+            //check to be sure values are correct
+            if(fname == ""){
+                document.getElementById("fnameLabel").className = "redtext";
+                formGood = false;
+            } else {
+                document.getElementById("fnameLabel").className = "blacktext"
+            }
+
+            if(lname == ""){
+                document.getElementById("lnameLabel").className = "redtext";
+                formGood = false;
+            } else {
+                document.getElementById("lnameLabel").className = "blacktext"
+            }
+
+            if(mstatus == ""){
+                document.getElementById("mstatusLabel").className = "redtext";
+                formGood = false;
+            } else {
+                document.getElementById("mstatusLabel").className = "blacktext"
+            }
+
+            if(sname == "" && mstatus == "M"){
+                document.getElementById("snameLabel").className = "redtext";
+                formGood = false;
+            } else {
+                document.getElementById("snameLabel").className = "blacktext"
+            }
+
+            // if all fields are good - submit the form
+            // else - fields not good - error message and red labels
+            if(formGood){
+                document.getElementById("myForm").submit();
+            } else {
+                document.getElementById("errMsg").innerHTML = "Please correct the following errors";
+                document.getElementById("errMsg").className = "redtext";
+            } 
+
+        }
+
+        function mstatusChange (){
+                var mstatus = document.getElementById("mstatus").value;
+                if(mstatus == "S"){
+                    document.getElementById("sname").disabled = true;
+                    document.getElementById("sname").value = "";
+                } else {
+                    document.getElementById("sname").disabled = false;
+                }
+        }
+
+        window.onload = function() {
+            document.getElementById("goBtn").onclick = processForm;
+            document.getElementById("mstatus").onchange = mstatusChange;
+            document.getElementById("fname").focus();
+        }
+       
+    </script>
+    <title>Form Validation</title>
+
+</head>
+<body>
+    <h2>Lab 6 - Form Validation</h2>
+    <h3 id="errMsg">All fields are required</h3>
+    <form id="myForm" action="https://www.waynedog.net/formreader.php" method="POST">
+        <table>
+            <tr>
+                <td><label id="fnameLabel">First Name</label></td>
+                <td><input type="text" id="fname" name="fname"></td>
+                <td><label id="lnameLabel">Last Name</label></td>
+                <td><input type="text" id="lname" name="lname"></td>
+            </tr>
+            <tr>
+                <td><label id="mstatusLabel">Marital Status</label></td>
+                <td><select id="mstatus" name="mstatus">
+                        <option value=""></option>
+                        <option value="M">Married</option>
+                        <option value="S">Single</option>
+                </td>
+                <td><label id="snameLabel">Spouse Name</label></td>
+                <td><input type="text" id="sname" name="sname"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="reset" value="RESET"></td>
+                <td colspan="2"><button type="button" id="goBtn">SUBMIT</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

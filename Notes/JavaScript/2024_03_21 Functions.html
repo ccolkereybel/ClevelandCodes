@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <style>
+   
+    </style>
+    <script>
+        "use strict"
+        function addTwo(x){
+        x = x + 2;
+        return x;
+       }
+
+       function addVars(x,y){
+        var result = x+y;
+        return result;
+       }
+
+       function getAnswer(){
+
+            var myNum1 = document.getElementById("myNum1").value;
+            myNum1 = parseInt(myNum1);
+            
+            var myNum2 = document.getElementById("myNum2").value;
+            myNum2 = parseInt(myNum2)
+
+            var answer = addVars(myNum1, myNum2);
+
+            document.getElementById("answer").value = answer;
+        }
+
+	   /*var myNum = 10;
+       document.write(myNum + "<br>");
+       var newNum = addTwo(myNum);
+       document.write(newNum + "<br>")
+
+       var myNum2 = addVars(myNum, newNum)
+       document.write(myNum2 + "<br>")
+       */
+      
+    </script>
+    <title>Functions Notes</title>
+
+</head>
+<body>
+    <h2>Function - Events</h2>
+    Enter a Number 1: <input type="text" id="myNum1"><br><br>
+    Enter a Number 2: <input type="text" id="myNum2"><br><br>
+    Add 'Em': <input type="type" id="answer" disabled><br><br>
+    <button type="button" id="btn" onclick="getAnswer()">Submit</button>
+
+</body>
+</html>

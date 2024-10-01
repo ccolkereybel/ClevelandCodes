@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>Lab 3 - Functions & Working with HTML</title> 
+	<script>
+		"use strict";
+		function calcFactorial(num) {
+            // calculate and return factorial of num 
+
+            var factorial = 1;
+
+            for (var i=2; i<=num; i++){
+                factorial = factorial * i;
+                
+            }
+            return factorial;
+            }
+            
+
+		function calculate() {
+		    // get myNum entered ny the user
+		    var myNum = document.getElementById("myNum").value;
+			myNum = parseInt(myNum);
+		    
+            // square it
+		    var mySquare = myNum*myNum;
+			
+		    // call your function to calculate factorial
+		    var myFactorial = calcFactorial(myNum);
+		   
+		    // display the square and factorial in the input fields
+            document.getElementById("mySquare").value = mySquare;
+            document.getElementById("myFactorial").value = myFactorial;
+		}
+		
+        window.onload = function() {
+		   document.getElementById("goCalculate").onclick = calculate;
+		}
+	</script>
+</head> 
+<body>
+	<main>
+		<h2>Enter a Number for Calculation</h1> 
+		<label for="myNum">My Number Is:</label>
+		<input type="text" id="myNum"><br>
+		<br/>
+		<!-- display the squre here -->
+		<label for="mySquare">My Number Squared:</label> 
+		<input type="text" id="mySquare" disabled><br> 
+		<br/>
+		<!-- display the factorial here -->
+		<label for="">My Factorial</label> 
+		<input type="text" id="myFactorial" disabled><br> 
+		<br/>
+		<label>&nbsp;</label>
+		<input type="button" id="goCalculate" value="GO"><br> 
+	</main> 
+</body>  
+</html>
